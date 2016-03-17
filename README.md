@@ -15,5 +15,12 @@ e.g:
 docker build -t postgres_from_dump:1.0 .
 docker run --name my-postgres-from-dump -e DUMP_URL=https://www.fuzzwork.co.uk/dump/postgres-latest.dmp.bz2 -e POSTGRES_PASSWORD=strongestpassword -e POSTGRES_DB=eve_static_dump -d postgres_from_dump:1.0
 ```
-Will restore the latest eve online static dump from fuzzwork.co.uk to a database named eve_static_dump with user postgres (who is given the password "strongestpassword".
-Once the dump is restored Postgres will be available on port 5432
+Will restore the latest eve online static dump from fuzzwork.co.uk to a database named eve_static_dump with user postgres (who is given the password "strongestpassword").
+
+Once the dump is restored Postgres will be available on port 5432.
+
+It's probably a good idea to use:
+```
+docker logs -f <containername> 
+```
+so you know when it's finished restoring the dump.
