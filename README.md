@@ -1,6 +1,6 @@
 ## PostgreSQL Dockerfile
 
-This is a fork of the official PostgreSQL Dockerfile. The primary addition being the retrieval and restoration of a dump (compressed with bzip2).
+This is a fork of the official PostgreSQL Dockerfile. The primary addition being the retrieval (over HTTP) and restoration of a dump file (compressed with bzip2).
 
 ### Usage
 Check out the official PostgreSQL docker image env variables and how to use this dockerfile here: https://hub.docker.com/_/postgres/
