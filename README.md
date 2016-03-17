@@ -17,9 +17,14 @@ docker run --name my-postgres-from-dump -e DUMP_URL=https://www.fuzzwork.co.uk/d
 ```
 Will restore the latest eve online static dump from fuzzwork.co.uk to a database named eve_static_dump with user postgres (who is given the password "strongestpassword").
 
+To find the containers IP address:
+```
+docker inspect <containername> | grep '"IPAddress":'
+```
+
 Once the dump is restored Postgres will be available on port 5432.
 
-It's probably a good idea to use:
+It's probably a good idea to follow the logs:
 ```
 docker logs -f <containername> 
 ```
